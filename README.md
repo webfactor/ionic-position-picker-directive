@@ -1,27 +1,74 @@
 # IonicPositionPickerDirective
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+Adds positionpicker functionality to any button.  
+Use `[wf-position-picker]` attribute on any `<button>` element.
 
-## Development server
+## Installation
+- Install `npm i @webfactor/ionic-position-picker-directive`.
+- Install `npm i @agm/core`.
+- Add `PositionPickerDirectiveModule` to your Ionic module imports.
+- Add `AgmCoreModule.forRoot({ apiKey: 'Maps-Api-Key'})` to your Ionic module imports
+- Add `GeolocationServiceProvider`to your Ionic providers
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## I/O
+```typescript
+position?: Coords
+```
+Show the lat/lon Position from a coords-object. Default is lat = 0, lon = 0;
 
-## Code scaffolding
+```typescript
+title?: string
+```  
+Default: 'Position auswählen'. Title for the position picker.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```typescript
+zoom?: number
+``` 
+Default: '13'. Set the zoomlevel to the map
 
-## Build
+```typescript
+streetViewControl?: boolean
+```
+Default: 'false'. Set if streetViewControl is shown or not.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```typescript
+zoomControl?: boolean
+```
+Default: 'false'. Set if zoomControl is shown or not.
 
-## Running unit tests
+```typescript
+backIcon?: string
+```
+Default: 'arrow-back'. Icon for the back-Button on the position picker modal.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+acceptIcon?: string
+```
+Default: 'checkmarks'. Icon for the accept-Button on the position picker modal.
 
-## Running end-to-end tests
+```typescript
+saveOnClose?: boolean
+```
+Default: 'false'. Remove the accept-button. Save data if modal dismiss.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+```typescript
+(positionPick)
+```
+Emits when the user click on accept button. _$event_ holds the position data.
+The Object contails the choosen positiondata and if exist the old positiondata.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Example
+```html
+<button ion-button 
+wf-position-picker 
+backIcon="pizza" 
+[position]="position" 
+zoomControl=true 
+(positionPick)="pick($event)">
+Position wählen
+</button>
+```
+
+![PositionPickerButton](/images/PositionPickerExample.png)
