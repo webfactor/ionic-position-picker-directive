@@ -1,6 +1,6 @@
 {
-  "name": "ionic-position-picker-directive",
-  "version": "0.1.0",
+  "name": "@webfactor/ionic-position-picker-directive",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "url"
@@ -14,8 +14,5 @@
   "module": "./esm5/ionic-position-picker-directive.es5.js",
   "typings": "./ionic-position-picker-directive.d.ts",
   "peerDependencies": {
-    "@angular/core": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/http": "^5.0.0"
   }
 }

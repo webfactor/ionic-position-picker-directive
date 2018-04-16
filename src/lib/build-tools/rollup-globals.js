@@ -1,14 +1,16 @@
 const rollupGlobals = {
+  'ionic-angular': 'ionic-angular',
+  '@agm/core': '@agm/core',
   'date-fns': 'date.fns',
-  'codemirror': 'codemirror',
+  codemirror: 'codemirror',
   'ng2-nouislider/src/nouislider': 'nouislider',
   'svg-pan-zoom': 'svg.pan.zoom',
-  'tslib': 'tslib',
-  'ramda': 'ramda',
+  tslib: 'tslib',
+  ramda: 'ramda',
   'file-saver': 'file-saver',
-  'lodash': 'lodash',
+  lodash: 'lodash',
 
-  'd3': 'd3',
+  d3: 'd3',
   'd3-ease': 'd3.ease',
   'd3-interpolate': 'd3.interpolate',
   'd3-scale': 'd3.scale',
@@ -92,7 +94,7 @@ const rollupGlobals = {
   '@ng-bootstrap/ng-bootstrap': 'ngb.ngb',
   '@ng-bootstrap/ng-bootstrap/tooltip/tooltip.module': 'ngb.tooltip',
   '@ng-bootstrap/ng-bootstrap/dropdown/dropdown.module': 'ngb.dropdown',
-  '@ng-bootstrap/ng-bootstrap/popover/popover.module': 'ngb.popover',
+  '@ng-bootstrap/ng-bootstrap/popover/popover.module': 'ngb.popover'
 };
 
 module.exports = rollupGlobals;
