@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons left>
+            <button ion-button icon-only (click)="dismiss()">
+                <ion-icon name={{backIcon}}></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons right >
+            <button ion-button icon-only (click)="savePosition()" *ngIf="!saveOnClose">
+                <ion-icon name="{{acceptIcon}}"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <agm-map style="height: 100%" [latitude]="position.lat" [longitude]="position?.lon" [zoom]="zoom" [streetViewControl]="streetViewControl" [zoomControl]="zoomControl"
+        (mapClick)="placeMarker($event)">
+        <agm-marker *ngIf=position [latitude]="position.lat" [longitude]="position.lon"></agm-marker>
+    </agm-map>
+</ion-content>
