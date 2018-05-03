@@ -22,18 +22,14 @@
     "paths": {
       "ionic-position-picker-directive": ["../dist/packages/ionic-position-picker-directive"]
     },
-    "typeRoots": [
-      "./node_modules/@types/"
-    ]
+    "typeRoots": ["./node_modules/@types/"]
   },
-  "files": [
-    "public_api.ts"
-  ],
+  "files": ["public_api.ts"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "ionic-position-picker-directive",
+    "flatModuleId": "@webfactor/ionic-position-picker-directive",
     "skipTemplateCodegen": true
   }
 }

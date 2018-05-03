@@ -1,18 +1,15 @@
 {
   "name": "@webfactor/ionic-position-picker-directive",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "repository": {
     "type": "git",
     "url": "url"
   },
-  "keywords": [
-    "angular"
-  ],
+  "keywords": ["angular"],
   "license": "MIT",
   "main": "./bundles/ionic-position-picker-directive.umd.js",
   "es2015": "./esm2015/ionic-position-picker-directive.js",
   "module": "./esm5/ionic-position-picker-directive.es5.js",
   "typings": "./ionic-position-picker-directive.d.ts",
-  "peerDependencies": {
-  }
+  "peerDependencies": {}
 }
