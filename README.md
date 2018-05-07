@@ -10,6 +10,8 @@ Use `[wf-position-picker]` attribute on any `<button>` element.
 - Add `AgmCoreModule.forRoot({ apiKey: 'Maps-Api-Key'})` to your Ionic module imports
 - Add `GeolocationServiceProvider`to your Ionic providers
 
+- If button don´t reakt to clickEvents add `PositionPickerDirectiveModule` to your Ionic Page module imports.
+
 ## I/O
 ```typescript
 position?: Coords
