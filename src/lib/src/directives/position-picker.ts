@@ -15,6 +15,7 @@ export class PositionPickerDirective {
   @Input() backIcon?: string = 'arrow-back';
   @Input() acceptIcon?: string = 'checkmark';
   @Input() saveOnClose?: boolean = false;
+  @Input() noMarker: boolean = false;
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -28,7 +29,8 @@ export class PositionPickerDirective {
       zoom: this.zoom,
       steetViewControl: this.streetViewControl,
       zoomControl: this.zoomControl,
-      saveOnClose: this.saveOnClose
+      saveOnClose: this.saveOnClose,
+      noMarker: this.noMarker
 
     });
     modal.onDidDismiss(data => {

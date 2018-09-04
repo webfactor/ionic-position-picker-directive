@@ -20,6 +20,7 @@ export class PositionPickerModalPage {
     streetViewControl: boolean = true;
     zoomControl: boolean = true;
     saveOnClose: boolean = false;
+    noMarker: boolean = false;
 
 
 
@@ -37,6 +38,7 @@ export class PositionPickerModalPage {
         this.streetViewControl = navParams.get('streetViewControl');
         this.zoomControl = navParams.get('zoomControl');
         this.saveOnClose = navParams.get('saveOnClose');
+        this.noMarker = navParams.get('noMarker')
     }
 
     getPosition() {
