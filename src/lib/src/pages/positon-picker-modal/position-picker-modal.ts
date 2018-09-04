@@ -62,6 +62,7 @@ export class PositionPickerModalPage {
   }
 
   placeMarker(event) {
+    this.showMarker = true;
     this.position = new Coords(event.coords.lat, event.coords.lng);
   }
 
