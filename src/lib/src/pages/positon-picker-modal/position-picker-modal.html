@@ -17,6 +17,6 @@
 <ion-content padding>
   <agm-map style="height: 100%" [latitude]="position?.lat" [longitude]="position?.lon" [zoom]="zoom"
     [streetViewControl]="streetViewControl" [zoomControl]="zoomControl" (mapClick)="placeMarker($event)">
-    <agm-marker *ngIf=position && !noMarker [latitude]="position?.lat" [longitude]="position?.lon"></agm-marker>
+    <agm-marker *ngIf="position && !noMarker" [latitude]="position?.lat" [longitude]="position?.lon"></agm-marker>
   </agm-map>
 </ion-content>
