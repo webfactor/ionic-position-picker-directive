@@ -32,7 +32,6 @@ export class PositionPickerModalPage {
     this.backIcon = navParams.get('backIcon');
     this.acceptIcon = navParams.get('acceptIcon');
     this.title = navParams.get('title');
-    this.zoom = navParams.get('zoom');
     this.streetViewControl = navParams.get('streetViewControl');
     this.zoomControl = navParams.get('zoomControl');
     this.saveOnClose = navParams.get('saveOnClose');
@@ -47,8 +46,9 @@ export class PositionPickerModalPage {
     ) {
       this.position = this.navParams.get('position');
       this.oldposition = this.position;
+      this.zoom = this.navParams.get('zoom');
       this.showMarker = true;
-    } else if (this.navParams.get('defaultPosition')) {
+    } else if (!this.navParams.get('position') && this.navParams.get('defaultPosition')) {
       this.position = this.navParams.get('defaultPosition');
       if (this.navParams.get('defaultZoom')) this.zoom = this.navParams.get('defaultZoom');
       this.showMarker = false;
