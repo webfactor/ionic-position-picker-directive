@@ -1,21 +1,37 @@
 import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { ModalController } from 'ionic-angular';
-import { PositionPickerModalPage } from '../pages/positon-picker-modal/position-picker-modal';
-import { Coords } from '../models/coords';
 
+import { Coords } from '../models/coords';
+import { PositionPickerModalPage } from '../pages/positon-picker-modal/position-picker-modal';
 
 @Directive({ selector: 'button[wf-position-picker]' })
 export class PositionPickerDirective {
-  @Output() positionPick = new EventEmitter();
-  @Input() position?: Coords = new Coords(0,0);
-  @Input() title?: string = "Position auswählen";
-  @Input() zoom?: number = 13;
-  @Input() streetViewControl?: boolean = false;
-  @Input() zoomControl?: boolean = false;
-  @Input() backIcon?: string = 'arrow-back';
-  @Input() acceptIcon?: string = 'checkmark';
-  @Input() saveOnClose?: boolean = false;
-  @Input() noMarker: boolean = false;
+  @Output()
+  positionPick = new EventEmitter();
+  @Input()
+  position?: Coords = new Coords(0, 0);
+  @Input()
+  title?: string = 'Position auswählen';
+  @Input()
+  zoom?: number = 13;
+  @Input()
+  streetViewControl?: boolean = false;
+  @Input()
+  zoomControl?: boolean = false;
+  @Input()
+  backIcon?: string = 'arrow-back';
+  @Input()
+  acceptIcon?: string = 'checkmark';
+  @Input()
+  saveOnClose?: boolean = false;
+  @Input()
+  noMarker: boolean = false;
+  @Input()
+  clickableIcons: boolean = true;
+  @Input()
+  defaultPosition: Coords = new Coords(50, 10);
+  @Input()
+  defaultZoom: number = 13;
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -30,8 +46,10 @@ export class PositionPickerDirective {
       steetViewControl: this.streetViewControl,
       zoomControl: this.zoomControl,
       saveOnClose: this.saveOnClose,
-      noMarker: this.noMarker
-
+      noMarker: this.noMarker,
+      clickableIcons: this.clickableIcons,
+      defaultPosition: this.defaultPosition,
+      defaultZoom: this.defaultZoom
     });
     modal.onDidDismiss(data => {
       if (data) this.positionPick.emit(data);

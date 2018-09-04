@@ -19,7 +19,9 @@ export class PositionPickerModalPage {
   streetViewControl: boolean = true;
   zoomControl: boolean = true;
   saveOnClose: boolean = false;
-  noMarker: boolean = false;
+  showMarker: boolean = true;
+  clickableIcons: boolean = true;
+  defaultPosition: Coords = null;
 
   constructor(
     public viewCtrl: ViewController,
@@ -34,7 +36,7 @@ export class PositionPickerModalPage {
     this.streetViewControl = navParams.get('streetViewControl');
     this.zoomControl = navParams.get('zoomControl');
     this.saveOnClose = navParams.get('saveOnClose');
-    this.noMarker = navParams.get('noMarker');
+    this.clickableIcons = navParams.get('clickableIcons');
   }
 
   getPosition() {
@@ -45,6 +47,11 @@ export class PositionPickerModalPage {
     ) {
       this.position = this.navParams.get('position');
       this.oldposition = this.position;
+      this.showMarker = true;
+    } else if (this.navParams.get('defaultPosition')) {
+      this.position = this.navParams.get('defaultPosition');
+      if (this.navParams.get('defaultZoom')) this.zoom = this.navParams.get('defaultZoom');
+      this.showMarker = false;
     } else this.getPositionIfNoAvailable();
   }
 
@@ -55,7 +62,6 @@ export class PositionPickerModalPage {
   }
 
   placeMarker(event) {
-    this.noMarker = false;
     this.position = new Coords(event.coords.lat, event.coords.lng);
   }
 
