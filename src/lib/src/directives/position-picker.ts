@@ -33,7 +33,9 @@ export class PositionPickerDirective {
   @Input()
   defaultZoom: number = 13;
   @Input()
-  navbarColor: string = 'white'
+  navbarBackgroundColor: string = 'black';
+  @Input()
+  navbarTextColor: string = 'white'
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -52,7 +54,8 @@ export class PositionPickerDirective {
       clickableIcons: this.clickableIcons,
       defaultPosition: this.defaultPosition,
       defaultZoom: this.defaultZoom,
-      navbarColor: this.navbarColor
+      navbarBackgroundColor: this.navbarBackgroundColor,
+      navbarTextColor: this.navbarTextColor
     });
     modal.onDidDismiss(data => {
       if (data) this.positionPick.emit(data);

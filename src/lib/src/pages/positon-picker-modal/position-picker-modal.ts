@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavParams, ViewController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, Navbar, NavParams, Toolbar, ViewController } from 'ionic-angular';
 
 import { Coords } from '../../models/coords';
 import { GeolocationServiceProvider } from '../../providers/geolocation-service';
@@ -10,6 +10,8 @@ import { GeolocationServiceProvider } from '../../providers/geolocation-service'
   templateUrl: 'position-picker-modal.html'
 })
 export class PositionPickerModalPage {
+  @ViewChild(Navbar) toolbar: Toolbar;
+
   position: Coords = null;
   oldposition: Coords = null;
   backIcon: string = '';
@@ -22,7 +24,8 @@ export class PositionPickerModalPage {
   showMarker: boolean = true;
   clickableIcons: boolean = true;
   defaultPosition: Coords = null;
-  navbarColor: string = '';
+  navbarBackgroundColor: string = '';
+  navbarTextColor: string = ''
 
   constructor(
     public viewCtrl: ViewController,
@@ -37,7 +40,8 @@ export class PositionPickerModalPage {
     this.zoomControl = navParams.get('zoomControl');
     this.saveOnClose = navParams.get('saveOnClose');
     this.clickableIcons = navParams.get('clickableIcons');
-    this.navbarColor = navParams.get('navbarColor');
+    this.navbarBackgroundColor = navParams.get('navbarBackgroundColor');
+    this.navbarTextColor = navParams.get('navbarTextColor');
   }
 
   getPosition() {
@@ -79,4 +83,5 @@ export class PositionPickerModalPage {
     let data = { position: this.position, oldposition: this.oldposition };
     this.viewCtrl.dismiss(data);
   }
+
 }

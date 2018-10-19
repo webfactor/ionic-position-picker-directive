@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-navbar [style.color]="navbarColor">
-    <ion-buttons left>
-      <button ion-button icon-only (click)="dismiss()">
-        <ion-icon name={{backIcon}}></ion-icon>
+  <ion-navbar [style.background-color]="navbarBackgroundColor" [style.color]="navbarTextColor" >
+    <ion-buttons left [style.color]="navbarTextColor">
+      <button  ion-button icon-only (click)="dismiss()" [style.color]="navbarTextColor">
+        <ion-icon name={{backIcon}} [style.color]="navbarTextColor"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>{{title}}</ion-title>
-    <ion-buttons right>
-      <button ion-button icon-only (click)="savePosition()" *ngIf="!saveOnClose">
-        <ion-icon name="{{acceptIcon}}"></ion-icon>
+    <div><strong>{{title}}</strong></div>
+    <ion-buttons right [style.color]="navbarTextColor" >
+      <button ion-button icon-only (click)="savePosition()" *ngIf="!saveOnClose" [style.color]="navbarTextColor" >
+        <ion-icon name="{{acceptIcon}}" [style.color]="navbarTextColor"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
