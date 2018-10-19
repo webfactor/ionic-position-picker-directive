@@ -22,6 +22,7 @@ export class PositionPickerModalPage {
   showMarker: boolean = true;
   clickableIcons: boolean = true;
   defaultPosition: Coords = null;
+  navbarColor: string = '';
 
   constructor(
     public viewCtrl: ViewController,
@@ -36,6 +37,7 @@ export class PositionPickerModalPage {
     this.zoomControl = navParams.get('zoomControl');
     this.saveOnClose = navParams.get('saveOnClose');
     this.clickableIcons = navParams.get('clickableIcons');
+    this.navbarColor = navParams.get('navbarColor');
   }
 
   getPosition() {
